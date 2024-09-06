@@ -33,7 +33,7 @@ resource "aws_key_pair" "tools" {
   key_name   = "tools"
   # you can paste the public key directly like this
   #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIJtlnxPDqOKjtXZcXTeX4cd6m/4oM+Woui8CC8tY6a8 Neela Reddy@neela"
-  public_key = file("~/.ssh/tools.pub")
+  public_key = trimspace(file("~/.ssh/id_rsa.pub"))
   # ~ means windows home directory
 }
 
